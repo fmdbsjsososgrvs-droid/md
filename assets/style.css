@@ -899,6 +899,10 @@ footer{
   .gallery,.gallery.gallery-asym{grid-template-columns:repeat(2,1fr);grid-auto-rows:auto}
   .gallery.gallery-asym>div:nth-child(1),
   .gallery.gallery-asym>div:nth-child(4){grid-row:auto;grid-column:auto}
+  /* mobile: restore square aspect-ratio so children have visible height
+     (desktop uses fixed 220px grid-auto-rows + height:100%, but on mobile
+      grid-auto-rows is auto so height:100% collapses to 0) */
+  .gallery.gallery-asym>div{aspect-ratio:1/1;height:auto}
   footer{padding:50px 24px 32px}
   .foot-bottom{flex-direction:column;text-align:center}
 }
