@@ -8,13 +8,37 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="assets/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/favicon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon/favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/favicon-180.png">
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="assets/favicon/favicon-180.png">
+<meta name="apple-mobile-web-app-title" content="Midnight Dejavu">
+<meta name="theme-color" content="#d97706">
 <style>
-  /* === Index hero · Black & Gold (어두운 배경 + 골드 타이포) === */
-  /* 오버레이는 원래 어두운 그라디언트 그대로 (style.css 기본 그대로 사용) */
-  .hero .eyebrow{color:var(--accent-soft);letter-spacing:.32em}
-  .hero h1{color:#f1e6cb}
+  /* === Index hero · 자홍 노을 위 크림 & 골드 === */
+  /* 위·아래 살짝 어둡게, 가운데는 노을이 그대로 보이도록 */
+  .hero::after{
+    background:linear-gradient(180deg,
+      rgba(15,8,18,.45) 0%,
+      rgba(15,8,18,.18) 40%,
+      rgba(10,6,14,.55) 100%);
+  }
+  .hero .eyebrow{
+    color:var(--accent-soft);
+    letter-spacing:.34em;
+  }
+  .hero h1{
+    color:#f5ecd6;
+    text-shadow:0 1px 30px rgba(0,0,0,.35);
+  }
   .hero h1 em{color:var(--accent-soft)}
-  .hero p{color:#e8d9b8}
+  .hero p{
+    color:#ecdfc4;
+    text-shadow:0 1px 24px rgba(0,0,0,.45);
+  }
 </style>
 </head>
 <body data-active-tracking="scroll">
@@ -36,7 +60,7 @@
 
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
-  <div class="hero-img" style="background-image:url('13.jpg')"></div>
+  <div class="hero-img" style="background-image:url('guam/IMG_0326.JPG')"></div>
   <div class="hero-inner">
     <span class="eyebrow">Personal Home Page</span>
     <h1>Midnight <em>Dejavu</em><br/>A Journey of Style</h1>
@@ -101,7 +125,7 @@
       <div class="residence-text reveal">
         <span class="eyebrow">Personal Home Page</span>
         <h2 class="serif">The Residence</h2>
-        <p>한 사람의 취향이 가장 정직하게 드러나는 곳, 집. 빛이 머무는 자리, 손이 자주 닿는 가구, 조용히 자리를 지키는 오브제 — 그 작은 디테일들이 모여 일상의 결을 만듭니다.</p>
+        <p>세 사람의 취향이 가장 정직하게 드러나는 곳, 집. 빛이 머무는 자리, 손이 자주 닿는 가구, 조용히 자리를 지키는 오브제 — 그 작은 디테일들이 모여 일상의 결을 만듭니다.</p>
         <a href="house.html" class="residence-link">Discover the Space <span>→</span></a>
       </div>
       <div class="residence-collage reveal">
