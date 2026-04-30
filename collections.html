@@ -17,6 +17,44 @@
 <link rel="apple-touch-icon-precomposed" sizes="180x180" href="assets/favicon/favicon-180.png">
 <meta name="apple-mobile-web-app-title" content="Midnight Dejavu">
 <meta name="theme-color" content="#d97706">
+<style>
+  /* === Collections page · category sections === */
+  .cat-section{padding:120px 0}
+  .cat-section.alt{background:#fff}
+  .cat-section .section-head{margin-bottom:60px}
+  .cat-section h2{color:var(--ink)}
+  .cat-section .single{
+    display:grid;
+    grid-template-columns:1fr;
+    max-width:380px;
+    margin:0 auto;
+  }
+  .card-brand{
+    display:block;
+    font-size:10px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:8px;
+    font-weight:500;
+  }
+  .card-body h3{font-size:14px}
+  /* 카드가 섹션 배경에서 미세하게 떠오르도록 (첨부 이미지의 입체감) */
+  .cat-section .card{
+    box-shadow:0 4px 18px -6px rgba(0,0,0,.08);
+  }
+  .cat-section .card:hover{
+    box-shadow:0 30px 60px -20px rgba(0,0,0,.35);
+  }
+  /* 다크 카테고리 섹션 (검정 배경 + 흰 글자) */
+  .cat-section.dark{background:var(--bg-dark)}
+  .cat-section.dark h2{color:#fff}
+  .cat-section.dark .section-head .eyebrow{color:rgba(255,255,255,.55)}
+  .cat-section.dark .section-head p{color:rgba(255,255,255,.72)}
+  @media (max-width:520px){
+    .cat-section{padding:80px 0}
+  }
+</style>
 </head>
 <body>
 
@@ -34,50 +72,156 @@
   </button>
 </nav>
 
+<!-- ============ HERO ============ -->
 <header class="hero-compact">
   <div class="hero-img" style="background-image:url('16.jpg')"></div>
   <div class="hero-inner">
     <span class="eyebrow">Curated luxury</span>
     <h1>The <em>Collections</em></h1>
-    <p>오랜 시간 곁에 둔 것들 — 가방, 시계, 그리고 작은 오브제들의 박물관.</p>
+    <p>오랜 시간 곁에 둔 것들 — 시계, 가방, 반지, 그리고 한 자루의 칼.<br/>각자의 이야기를 담은 작은 박물관.</p>
   </div>
 </header>
 
-<section class="collections" style="background:var(--bg);color:var(--ink)">
+<!-- ============ TIMEPIECES (3) ============ -->
+<section id="timepieces" class="cat-section dark">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow" style="color:var(--muted)">Four chapters</span>
-      <h2 class="serif" style="color:var(--ink)">Four Curations</h2>
-      <p style="color:var(--muted)">사물에는 시간이 깃듭니다. 처음 만난 날의 설렘, 손때가 묻어가는 과정, 그리고 그 자리에 남는 흔적까지.</p>
+      <span class="eyebrow">Three timepieces</span>
+      <h2 class="serif">Timepieces</h2>
+      <p>매 초 똑같이 흐르는 침이 가르치는 것은, 결국 시간이 아니라 마음의 무게다.</p>
+    </div>
+
+    <div class="cards cards-3 reveal-stagger">
+      <a href="tag.html" class="card framed frame-light">
+        <div class="card-media">
+          <div class="card-photo" style="background-image:url('tag/M.jpg')"></div>
+        </div>
+        <div class="card-body">
+          <h3>Carrera</h3>
+          <p>TAG Heuer · Calibre 5 Day-Date</p>
+        </div>
+      </a>
+      <a href="omega.html" class="card framed frame-light">
+        <div class="card-media">
+          <div class="card-photo" style="background-image:url('omega/M.jpg')"></div>
+        </div>
+        <div class="card-body">
+          <h3>007 NTTD</h3>
+          <p>Omega · No Time To Die Edition</p>
+        </div>
+      </a>
+      <a href="oris.html" class="card framed frame-light">
+        <div class="card-media">
+          <div class="card-photo" style="background-image:url('oris/M.jpg')"></div>
+        </div>
+        <div class="card-body">
+          <h3>Artelier Skeleton</h3>
+          <p>Oris · Translucent Movement</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ICONIC BAGS (4) ============ -->
+<section id="bags" class="cat-section alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Four bags</span>
+      <h2 class="serif">Iconic Bags</h2>
+      <p>가방을 든다는 동사 안에는 어떤 사람이 되고 싶은가에 대한 작은 선언이 들어 있다.</p>
     </div>
 
     <div class="cards reveal-stagger">
-      <a href="dwelling.html" class="card">
-        <div class="card-media placeholder"></div>
+      <a href="gucci.html" class="card framed frame-light">
+        <div class="card-media">
+          <div class="card-photo" style="background-image:url('gucci/IMG_3075.jpg')"></div>
+        </div>
         <div class="card-body">
-          <h3>The Dwelling</h3>
-          <p>A reflection of home</p>
+          <h3>Ophidia</h3>
+          <p>Gucci · GG Backpack</p>
         </div>
       </a>
-      <a href="cabinet.html" class="card">
-        <div class="card-media placeholder"></div>
+      <a href="lui1.html" class="card framed frame-light">
+        <div class="card-media">
+          <div class="card-photo" style="background-image:url('lui1/IMG_3069.jpg')"></div>
+        </div>
         <div class="card-body">
-          <h3>Collectibles Cabinet</h3>
-          <p>Treasures within the shelves</p>
+          <h3>Alma BB</h3>
+          <p>Louis Vuitton · Monogram Canvas</p>
         </div>
       </a>
-      <a href="bags.html" class="card">
-        <div class="card-media placeholder"></div>
+      <a href="lui2.html" class="card framed frame-light">
+        <div class="card-media">
+          <div class="card-photo" style="background-image:url('lui2/IMG_3071.jpg')"></div>
+        </div>
         <div class="card-body">
-          <h3>Iconic Bags</h3>
-          <p>Curated luxury handbags</p>
+          <h3>Duo Messenger</h3>
+          <p>Louis Vuitton · Monogram Shadow</p>
         </div>
       </a>
-      <a href="timepieces.html" class="card">
-        <div class="card-media placeholder"></div>
+      <a href="saint-laurent.html" class="card framed frame-light">
+        <div class="card-media">
+          <div class="card-photo placeholder"></div>
+        </div>
         <div class="card-body">
-          <h3>Timepieces</h3>
-          <p>The art of time</p>
+          <h3>Saint Laurent</h3>
+          <p>Coming soon</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RING (1) ============ -->
+<section id="ring" class="cat-section" style="background:var(--bg)">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">One ring</span>
+      <h2 class="serif">Ring</h2>
+      <p>세 개의 금이 만나 한 개의 약속을 만든다.</p>
+    </div>
+
+    <div class="single reveal-stagger">
+      <a href="cartier.html" class="card framed frame-light">
+        <div class="card-media">
+          <div class="card-photo" style="background-image:url('cartier/IMG_3064.jpg')"></div>
+        </div>
+        <div class="card-body">
+          <h3>Trinity</h3>
+          <p>Cartier · Est. 1924</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KNIVES (2) ============ -->
+<section id="knives" class="cat-section dark">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Two knives</span>
+      <h2 class="serif">knife</h2>
+      <p>가장 작은 도구 하나가 가장 단정한 결단을 가르친다.</p>
+    </div>
+
+    <div class="cards cards-2 reveal-stagger" style="max-width:760px;margin:0 auto">
+      <a href="boker.html" class="card framed frame-light">
+        <div class="card-media">
+          <div class="card-photo" style="background-image:url('knife/IMG_3208.jpg')"></div>
+        </div>
+        <div class="card-body">
+          <h3>SK8 Steel</h3>
+          <p>Böker · Tactical Knife by Vox</p>
+        </div>
+      </a>
+      <a href="knife.html" class="card framed frame-light">
+        <div class="card-media">
+          <div class="card-photo" style="background-image:url('knife/IMG_3205.jpg')"></div>
+        </div>
+        <div class="card-body">
+          <h3>Evoke Alox</h3>
+          <p>Victorinox · Swiss Made · Camo</p>
         </div>
       </a>
     </div>

@@ -39,6 +39,74 @@
     color:#ecdfc4;
     text-shadow:0 1px 24px rgba(0,0,0,.45);
   }
+
+  /* === The Residence · 콜라주 이미지가 4방향에서 순차로 들어옴 === */
+  /* 텍스트는 .reveal 없이 고정. 콜라주만 애니메이션 */
+  .residence-collage.reveal{
+    /* 컨테이너 자체는 페이드/이동 없이 — 자식만 움직임 */
+    opacity:1;
+    transform:none;
+  }
+  .residence-collage.reveal > a{
+    opacity:0;
+    transition:opacity 1s var(--easing), transform 1.1s var(--easing);
+    will-change:transform,opacity;
+  }
+  /* 1번 (큰 좌측 사진): 왼쪽에서 슬라이드 인 */
+  .residence-collage.reveal > a:nth-child(1){
+    transform:translateX(-70px);
+    transition-delay:0s;
+  }
+  /* 2번 (우상단 사진): 위에서 슬라이드 다운 */
+  .residence-collage.reveal > a:nth-child(2){
+    transform:translateY(-70px);
+    transition-delay:.22s;
+  }
+  /* 3번 (중앙 사진): 오른쪽에서 슬라이드 인 */
+  .residence-collage.reveal > a:nth-child(3){
+    transform:translateX(70px);
+    transition-delay:.44s;
+  }
+  /* 4번 (하단 와이드 사진): 아래에서 슬라이드 업 */
+  .residence-collage.reveal > a:nth-child(4){
+    transform:translateY(70px);
+    transition-delay:.66s;
+  }
+  /* visible 클래스가 붙으면 모두 제자리로 — 순차 등장 */
+  .residence-collage.reveal.visible > a{
+    opacity:1;
+    transform:none;
+  }
+
+  /* === Travel Journal · 스크롤 들어오면 배경이 파스텔 블루로 서서히 === */
+  /* .reveal 베이스의 opacity/translate는 무효화하고, 배경색 전환만 적용 */
+  .travel.reveal{
+    opacity:1;
+    transform:none;
+    transition:background-color 8s var(--easing);
+  }
+  .travel.reveal.visible{
+    background:#dde7ed;
+  }
+
+  /* === Section divider · 왼쪽→오른쪽 그어지는 골드 라인 === */
+  .section-divider{
+    padding:80px 24px;
+    display:flex;
+    justify-content:center;
+  }
+  .section-divider .divider-line{
+    width:100%;
+    max-width:480px;
+    height:1px;
+    background:var(--accent);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform 1.6s var(--easing) .15s;
+  }
+  .section-divider.visible .divider-line{
+    transform:scaleX(1);
+  }
 </style>
 </head>
 <body data-active-tracking="scroll">
@@ -86,32 +154,40 @@
     </div>
 
     <div class="cards reveal-stagger">
-      <a href="dwelling.html" class="card">
-        <div class="card-media placeholder"></div>
+      <a href="collections.html#timepieces" class="card framed">
+        <div class="card-media">
+          <div class="card-photo" style="background-image:url('omega/M.jpg')"></div>
+        </div>
         <div class="card-body">
-          <h3>The Dwelling</h3>
-          <p>A reflection of home</p>
+          <h3>Timepieces</h3>
+          <p>The art of time</p>
         </div>
       </a>
-      <a href="cabinet.html" class="card">
-        <div class="card-media placeholder"></div>
-        <div class="card-body">
-          <h3>Collectibles Cabinet</h3>
-          <p>Treasures within the shelves</p>
+      <a href="collections.html#bags" class="card framed">
+        <div class="card-media">
+          <div class="card-photo" style="background-image:url('lui1/IMG_3069.jpg')"></div>
         </div>
-      </a>
-      <a href="bags.html" class="card">
-        <div class="card-media placeholder"></div>
         <div class="card-body">
           <h3>Iconic Bags</h3>
           <p>Curated luxury handbags</p>
         </div>
       </a>
-      <a href="timepieces.html" class="card">
-        <div class="card-media placeholder"></div>
+      <a href="collections.html#ring" class="card framed">
+        <div class="card-media">
+          <div class="card-photo" style="background-image:url('cartier/IMG_3064.jpg')"></div>
+        </div>
         <div class="card-body">
-          <h3>Timepieces</h3>
-          <p>The art of time</p>
+          <h3>Ring</h3>
+          <p>Three-gold trinity</p>
+        </div>
+      </a>
+      <a href="collections.html#knives" class="card framed">
+        <div class="card-media">
+          <div class="card-photo" style="background-image:url('knife/IMG_3208.jpg')"></div>
+        </div>
+        <div class="card-body">
+          <h3>Knives</h3>
+          <p>Folded steel</p>
         </div>
       </a>
     </div>
@@ -122,7 +198,7 @@
 <section class="residence" id="residence">
   <div class="container">
     <div class="residence-grid">
-      <div class="residence-text reveal">
+      <div class="residence-text">
         <span class="eyebrow">Personal Home Page</span>
         <h2 class="serif">The Residence</h2>
         <p>세 사람의 취향이 가장 정직하게 드러나는 곳, 집. 빛이 머무는 자리, 손이 자주 닿는 가구, 조용히 자리를 지키는 오브제 — 그 작은 디테일들이 모여 일상의 결을 만듭니다.</p>
@@ -138,25 +214,13 @@
   </div>
 </section>
 
-<!-- ============ MOMENTS ============ -->
-<section class="luxury" id="moments">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Lived &amp; remembered</span>
-      <h2 class="serif">Moments</h2>
-      <p>잠시 머물렀지만 오래 남는 시간들 — 한국의 야경, 무대 위의 빛, 그리고 천 년의 단편.</p>
-    </div>
-    <div class="luxury-row reveal-stagger">
-      <a href="gyeongju.html" class="luxury-item" data-label="경주" style="background-image:url('ju/IMG_0845.jpg')"></a>
-      <a href="kooza.html" class="luxury-item" data-label="쿠자" style="background-image:url('kooza/IMG_1995.jpg')"></a>
-      <a href="museum.html" class="luxury-item" data-label="국립중앙박물관" style="background-image:url('kuk/461177211_1030749758596813_3455743250072452646_n_18026748149111259.jpg')"></a>
-    </div>
-    <a href="moments.html" class="cta-link">Browse all moments <span>→</span></a>
-  </div>
-</section>
+<!-- ============ DIVIDER (Residence → Travel) ============ -->
+<div class="section-divider reveal">
+  <div class="divider-line"></div>
+</div>
 
 <!-- ============ TRAVEL ============ -->
-<section class="travel" id="travel">
+<section class="travel reveal" id="travel">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Beyond the home</span>
@@ -183,6 +247,23 @@
         <small>Pacific · Familiar Tides Edition</small><span class="serif">Saipan&nbsp;II</span>
       </a>
     </div>
+  </div>
+</section>
+
+<!-- ============ MOMENTS ============ -->
+<section class="luxury" id="moments">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Lived &amp; remembered</span>
+      <h2 class="serif">Moments</h2>
+      <p>잠시 머물렀지만 오래 남는 시간들 — 한국의 야경, 무대 위의 빛, 그리고 천 년의 단편.</p>
+    </div>
+    <div class="luxury-row reveal-stagger">
+      <a href="gyeongju.html" class="luxury-item" data-label="경주" style="background-image:url('ju/IMG_0845.jpg')"></a>
+      <a href="kooza.html" class="luxury-item" data-label="쿠자" style="background-image:url('kooza/IMG_1995.jpg')"></a>
+      <a href="museum.html" class="luxury-item" data-label="국립중앙박물관" style="background-image:url('kuk/461177211_1030749758596813_3455743250072452646_n_18026748149111259.jpg')"></a>
+    </div>
+    <a href="moments.html" class="cta-link">Browse all moments <span>→</span></a>
   </div>
 </section>
 
