@@ -1137,3 +1137,47 @@ footer{
   .gb-card{padding:22px 20px 18px}
   .gb-name{font-size:16px}
 }
+
+/* ============ FRAMED CARD ============ */
+/* 카드 사진 주변에 여백을 둘러 액자처럼 보이게 만드는 모디파이어
+   .card.framed              → 크림 여백 (기본, 다크 배경 위에서 보기 좋음)
+   .card.framed.frame-light  → 흰색 여백 (라이트 배경 위에서 보기 좋음)
+*/
+.card.framed{ --frame-bg:#efece7; }
+.card.framed.frame-light{ --frame-bg:#ffffff; }
+.card.framed .card-media{
+  background:var(--frame-bg);
+  padding:12px 10px;
+  aspect-ratio:3/4;
+  overflow:hidden;
+}
+.card.framed .card-photo{
+  width:100%;
+  height:100%;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  transition:transform .9s var(--easing);
+  position:relative;
+}
+.card.framed:hover .card-photo{transform:scale(1.02)}
+/* 액자 카드는 사진/텍스트 사이 구분선을 두지 않음 */
+.card.framed .card-body{border-top:none}
+/* 사진 없는 placeholder (예: Saint Laurent) */
+.card-photo.placeholder{
+  background:repeating-linear-gradient(135deg,rgba(160,130,84,.06) 0 8px,transparent 8px 16px);
+}
+.card-photo.placeholder::after{
+  content:"";
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:36px;height:36px;
+  border:1px solid var(--accent);
+  border-radius:50%;
+  background:radial-gradient(circle,var(--accent) 0%,transparent 60%);
+  opacity:.35;
+}
+@media (max-width:520px){
+  .card.framed .card-media{padding:10px 8px}
+}
