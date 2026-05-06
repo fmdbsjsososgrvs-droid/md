@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Guest — Midnight Dejavu</title>
+<title>Life — Midnight Dejavu</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
     <li><a href="collections.html">Collections</a></li>
     <li><a href="travel.html">Travel</a></li>
     <li><a href="moments.html">Moments</a></li>
-    <li><a href="guest.html" class="active">Guest</a></li>
+    <li><a href="guest.html" class="active">Life</a></li>
   </ul>
   <button class="nav-burger" id="burger" aria-label="menu">
     <span></span><span></span><span></span>
@@ -38,84 +38,22 @@
 <header class="hero-compact" style="height:46vh;min-height:340px">
   <div class="hero-img" style="background-image:url('15.jpg')"></div>
   <div class="hero-inner">
-    <span class="eyebrow">Guest</span>
-    <h1 class="serif">Guestbook</h1>
-    <p>이곳에 다녀가신 분들의 한 줄.<br/>이름, 그리고 메시지를 남겨 주세요.</p>
+    <span class="eyebrow">Life</span>
+    <h1 class="serif">Quiet <em style="color:#fff;font-style:italic">Pages</em></h1>
+    <p>일상에 머무는 작은 페이지들 —<br/>곧 채워질 자리.</p>
   </div>
 </header>
 
-<!-- ============ GUESTBOOK ============ -->
-<section class="guestbook">
-  <div class="container" style="max-width:760px">
-
-    <!-- Write form -->
-    <form id="gb-form" class="gb-form reveal" autocomplete="off">
-      <div class="gb-row">
-        <input
-          type="text"
-          id="gb-name"
-          name="name"
-          placeholder="이름"
-          maxlength="30"
-          required
-          autocomplete="off"
-        />
-        <input
-          type="password"
-          id="gb-pin"
-          name="pin"
-          placeholder="비밀번호 (숫자 4자리)"
-          inputmode="numeric"
-          pattern="\d{4}"
-          maxlength="4"
-          required
-          autocomplete="new-password"
-        />
-      </div>
-      <textarea
-        id="gb-message"
-        name="message"
-        placeholder="남기실 한 줄..."
-        rows="4"
-        maxlength="500"
-        required
-      ></textarea>
-      <div id="gb-charcount" class="gb-charcount">0 / 500</div>
-      <div class="gb-actions">
-        <span id="gb-status" class="gb-status"></span>
-        <button type="submit" id="gb-submit">남기기 →</button>
-      </div>
-    </form>
-
-    <!-- Entries list -->
-    <div id="gb-list" class="gb-list">
-      <div class="gb-loading">불러오는 중…</div>
-    </div>
-
+<!-- ============ EMPTY STATE ============ -->
+<section style="padding:140px 24px 180px;text-align:center">
+  <div style="max-width:480px;margin:0 auto;color:var(--muted)">
+    <span class="eyebrow" style="display:block;margin-bottom:18px;color:var(--accent)">Coming soon</span>
+    <p style="font-size:14px;line-height:2;letter-spacing:.02em">
+      이 페이지는 비어 있습니다.<br/>
+      조용한 페이지로 다시 돌아오겠습니다.
+    </p>
   </div>
 </section>
-
-<!-- ============ DELETE MODAL ============ -->
-<div id="gb-modal" class="gb-modal" hidden>
-  <div class="gb-modal-card">
-    <h3 class="serif">이 글을 삭제할까요?</h3>
-    <p>작성하실 때 입력하신<br/>4자리 비밀번호를 입력해 주세요.</p>
-    <input
-      type="password"
-      id="gb-modal-pin"
-      inputmode="numeric"
-      pattern="\d{4}"
-      maxlength="4"
-      autocomplete="off"
-      placeholder="••••"
-    />
-    <div class="gb-modal-actions">
-      <button id="gb-modal-cancel" type="button">취소</button>
-      <button id="gb-modal-confirm" type="button">삭제</button>
-    </div>
-    <div id="gb-modal-error" class="gb-modal-error"></div>
-  </div>
-</div>
 
 <!-- ============ FOOTER ============ -->
 <footer>
@@ -136,6 +74,5 @@
 </footer>
 
 <script src="assets/main.js"></script>
-<script type="module" src="assets/guestbook.js"></script>
 </body>
 </html>
