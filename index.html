@@ -260,12 +260,30 @@
 </nav>
 
 <!-- ============ HERO ============ -->
+<style>
+  /* Index hero — bright background, dark scroll cue */
+  #top .scroll-cue{
+    color:#111;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.36em;
+    text-shadow:0 1px 14px rgba(255,255,255,.9), 0 0 24px rgba(255,255,255,.7);
+    bottom:48px;
+    gap:18px;
+  }
+  #top .scroll-cue::after{
+    background:linear-gradient(180deg, rgba(20,20,20,.7) 0%, rgba(20,20,20,.15) 100%);
+    height:64px;
+    width:2px;
+    box-shadow:0 0 12px rgba(255,255,255,.5);
+  }
+</style>
 <header class="hero" id="top">
-  <div class="hero-img" style="background-image:url('guam/IMG_0326.JPG')"></div>
-  <div class="hero-inner">
-    <span class="eyebrow">Personal Home Page</span>
-    <h1>Midnight <em>Dejavu</em><br/>A Journey of Style</h1>
-    <p>jazz &amp; lindyhop 열정적으로 사랑하고 결실을 맺은 우리들의 이야기.<br/>삶, 행복, 그리고 모든 경험들에 대한 개인적인 기록.</p>
+  <div class="hero-img" style="background-image:linear-gradient(rgba(255,255,255,.85),rgba(255,255,255,.85)),url('12.jpg');background-size:cover;background-position:center;background-repeat:no-repeat"></div>
+  <div class="hero-inner" style="color:var(--ink)">
+    <span class="eyebrow" style="color:var(--accent);text-shadow:0 1px 10px rgba(255,255,255,.7)">Personal Home Page</span>
+    <h1 style="color:#111;text-shadow:0 1px 20px rgba(255,255,255,.7), 0 1px 3px rgba(255,255,255,.5)">Midnight <em style="color:var(--accent);font-style:italic">Dejavu</em><br/>A Journey of Style</h1>
+    <p style="color:#222;text-shadow:0 1px 14px rgba(255,255,255,.75), 0 1px 3px rgba(255,255,255,.5)">jazz &amp; lindyhop 열정적으로 사랑하고 결실을 맺은 우리들의 이야기.<br/>삶, 행복, 그리고 모든 경험들에 대한 개인적인 기록.</p>
   </div>
   <div class="scroll-cue">Scroll</div>
 </header>
